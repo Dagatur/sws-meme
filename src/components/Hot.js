@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Meme from './Meme';
-import memeData from '../memeData';
+import Meme from './meme';
+import memeData from '../data/memeData';
 
 function Hot() {
     const [memes, setMemes] = useState(() => {
