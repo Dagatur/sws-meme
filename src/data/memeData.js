@@ -113,7 +113,7 @@ const memes = [
     },
     {
       id: 15,
-      title: "Trying to understand quantum physics",
+      title: "Trying to understand quantum physic 1",
       upvotes: 3,
       downvotes: 1,
       img: "https://i.imgur.com/abcdefgh.jpg",

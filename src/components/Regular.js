@@ -3,19 +3,12 @@ import Meme from './meme';
 import memeData from '../data/memeData';
 
 function Regular() {
-    const [memes, setMemes] = useState(() => {
-        const savedMemes = localStorage.getItem('memes');
-        return savedMemes ? JSON.parse(savedMemes) : memeData;
-    });
+    const [memes, setMemes] = useState(memeData);
 
     useEffect(() => {
         const filteredMemes = memeData.filter(meme => (meme.upvotes - meme.downvotes)<= 5);
         setMemes(filteredMemes);
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem('memes', JSON.stringify(memes));
-    }, [memes]);
 
     const handleVote = (title, upvotes, downvotes) => {
         const updatedMemes = memes.map(meme =>
