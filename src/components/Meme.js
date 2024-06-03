@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/meme.css';
 
 function Meme({ meme, onVote }) {
     const [upvotes, setUpvotes] = useState(meme.upvotes);
@@ -23,14 +24,12 @@ function Meme({ meme, onVote }) {
         <div className='meme'>
             <h2>{meme.title}</h2>
             <img src={meme.img} alt={meme.title} />
-            <div id='votes-box'>
-                <div class='vote'>Upvotes: {upvotes}</div>
-                <div class='vote'>Downvote: {downvotes}</div>
-            </div>
-            <div>
-                <button onClick={handleUpvote}>Upvote</button>
-                <button onClick={handleDownvote}>Downvote</button>
-                <button onClick={handleStar}>{starred ? 'Unstar' : 'Star'}</button>
+            <div className='votes-box'>
+                <button className='vote' onClick={handleUpvote}><i class="fa-solid fa-thumbs-up"></i></button>
+                <div className='vote'>{upvotes}</div>
+                <button className='vote' onClick={handleDownvote}><i class="fa-solid fa-thumbs-down"></i></button>
+                <div className='vote'>{downvotes}</div>
+                <button onClick={handleStar} className="star-button"><i className={starred ? 'fas fa-star' : 'far fa-star'}></i></button>
             </div>
         </div>
     );
