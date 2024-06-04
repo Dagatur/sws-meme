@@ -8,18 +8,17 @@ body {
 
 nav{
   width: 100%;
-  background-color: #4c7dcb;
+  background-color: hsl(217, 55%, 55%);
   display: flex;
   justify-content: space-around;
   padding: 15px 0;
+  position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
   text-decoration: none;
 }
 
@@ -28,6 +27,7 @@ nav a:hover {
 }
 
 nav a.active {
-  color: #ffccff;
+  color: #e696fa;
   font-weight: bold;
+  font-size: 1.2em;
 }
