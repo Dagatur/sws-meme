@@ -21,7 +21,7 @@ const [memes, setMemes] = useState(memeData)
           <Route path="/" element={<Navigate replace to="/hot" />} />
           <Route path='/hot' element={<Memes memes={memes} setMemes={setMemes} isHot={true}/>}/>
           <Route path='/regular'element={<Memes memes={memes} setMemes={setMemes} isHot={false}/>}/>
-          <Route path='/addmeme'element={<AddMeme/>}/>
+          <Route path='/addmeme'element={<AddMeme memes={memes} setMemes={setMemes}/>}/>
         </Routes>
       </div>
     </Router>
