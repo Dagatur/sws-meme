@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, NavLink, Navigate } from 'react-router-dom';
 import memeData from './data/memeData';
 import AddMeme from './components/AddMeme';
 import Memes from './components/Memes';
@@ -18,6 +18,7 @@ const [memes, setMemes] = useState(memeData)
           <NavLink to='/addmeme' className={(navData) => (navData.isActive ? 'active' : '')}>Add Meme</NavLink>
         </nav>
         <Routes>
+          <Route path="/" element={<Navigate replace to="/hot" />} />
           <Route path='/hot' element={<Memes memes={memes} setMemes={setMemes} isHot={true}/>}/>
           <Route path='/regular'element={<Memes memes={memes} setMemes={setMemes} isHot={false}/>}/>
           <Route path='/addmeme'element={<AddMeme/>}/>
