@@ -11,9 +11,9 @@ function Meme({ meme, onVote, }) {
         onVote({ ...meme, downvotes: meme.downvotes + 1 });
       };
     
-    // const handleStar = () => {
-    //     setStarred(!starred);
-    // };
+    const handleStar = () => {
+        onVote({ ...meme, starred: !meme.starred });
+    };
 
     return (
         <div className='meme'>
@@ -24,7 +24,7 @@ function Meme({ meme, onVote, }) {
                 <div className='vote'>{meme.upvotes}</div>
                 <button className='vote' onClick={handleDownvote}><i class="fa-solid fa-thumbs-down"></i></button>
                 <div className='vote'>{meme.downvotes}</div>
-                {/* <button onClick={handleStar} className="star-button"><i className={starred ? 'fas fa-star' : 'far fa-star'}></i></button> */}
+                <button onClick={handleStar} className="star-button"><i className={meme.starred ? 'fas fa-star' : 'far fa-star'}></i></button>
             </div>
         </div>
     );
