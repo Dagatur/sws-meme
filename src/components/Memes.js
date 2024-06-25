@@ -1,5 +1,6 @@
 import React from 'react';
 import Meme from './meme';
+import '../App.css';
 
 function Memes({ memes, setMemes, isHot }) {
   const filteredMemes = isHot
@@ -11,10 +12,12 @@ function Memes({ memes, setMemes, isHot }) {
   };
 
   return (
-    <div className="memes">
+    <div className='container'>
+    <div className='memes'>
       {filteredMemes.map(meme => (
         <Meme key={meme.id} meme={meme} onVote={updateMeme} />
       ))}
+    </div>
     </div>
   );
 }

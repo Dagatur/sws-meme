@@ -23,7 +23,7 @@ const [memes, setMemes] = useState(memeData)
           <Route path='/regular'element={<Memes memes={memes} setMemes={setMemes} isHot={false}/>}/>
           <Route path='/addmeme'element={<AddMeme memes={memes} setMemes={setMemes}/>}/>
         </Routes>
-      </div>
+        </div>
     </Router>
   );
 }

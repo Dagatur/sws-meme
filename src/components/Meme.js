@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import '../styles/meme.css';
 
 function Meme({ meme, onVote, }) {
@@ -19,12 +19,12 @@ function Meme({ meme, onVote, }) {
         <div className='meme'>
             <h2>{meme.title}</h2>
             <img src={meme.img} alt={meme.title} />
-            <div className='votes-box'>
-                <button className='vote' onClick={handleUpvote}><i class="fa-solid fa-thumbs-up"></i></button>
-                <div className='vote'>{meme.upvotes}</div>
-                <button className='vote' onClick={handleDownvote}><i class="fa-solid fa-thumbs-down"></i></button>
-                <div className='vote'>{meme.downvotes}</div>
-                <button onClick={handleStar} className="star-button"><i className={meme.starred ? 'fas fa-star' : 'far fa-star'}></i></button>
+            <div className='box'>
+                <button onClick={handleUpvote}><i class="fa-solid fa-thumbs-up"></i></button>
+                <div>{meme.upvotes}</div>
+                <button onClick={handleDownvote}><i class="fa-solid fa-thumbs-down"></i></button>
+                <div>{meme.downvotes}</div>
+                <button className='star' onClick={handleStar}><i className={meme.starred ? 'fas fa-star' : 'far fa-star'}></i></button>
             </div>
         </div>
     );

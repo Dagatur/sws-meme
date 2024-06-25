@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/addMeme.css';
 
 const AddMeme = ({memes, setMemes}) => {
     const [title, setTitle] = useState('');
@@ -14,11 +15,13 @@ const AddMeme = ({memes, setMemes}) => {
             setMemes((previousState)=>([...previousState, newMeme]));
             setTitle('');
             setImg('');
+            alert("Meme added successfully!");
         }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div className='container'>
+        <form className='add-meme-form' onSubmit={handleSubmit}>
             <div>
                 <label>Title: </label>
                 <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} required/>
@@ -29,6 +32,7 @@ const AddMeme = ({memes, setMemes}) => {
             </div>
             <button type='submit'>Add Meme</button>
         </form>
+        </div>
     );
 };
 
