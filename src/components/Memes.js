@@ -1,5 +1,5 @@
 import React from 'react';
-import Meme from './meme';
+import Meme from './Meme';
 import '../App.css';
 
 function Memes({ memes, setMemes, isHot }) {
